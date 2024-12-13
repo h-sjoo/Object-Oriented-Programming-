@@ -1,0 +1,37 @@
+class Player:
+    def __init__(self, name, health, attack_power):
+        self.name = name
+        self.health = health
+        self.attack_power = attack_power
+       
+       
+    def basic_atk(self, target):
+        target.health -= self.attack_power
+        print(f"{self.name} attacks {target.name} and deals {self.attack_power}, and {target.name} has only {target.health} hp\n")
+       
+    def heal(self, amount):
+        amount.health += self.attack.power
+        print(f"{self.name} restore {amount.health} hp")
+
+
+mm = Player("Lesley", 2000, 500)
+mage = Player("Lunox", 1500, 400)
+print(f"Hero: {mm.name}, Health: {mm.health}, Power: {mm.attack_power}")
+print(f"Hero: {mage.name}, Health: {mage.health}, Power: {mage.attack_power}\n")
+mm.basic_atk(mage)
+print(f"Hero: {mage.name}, Current health: {mage.health}, Attack power: {mage.attack_power}")
+mage.basic_atk(mm)
+print(f"Hero: {mm.name}, Current health: {mm.health}, Attack power: {mm.attack_power}")
+mm.basic_atk(mage)
+print(f"Hero: {mage.name}, Current health: {mage.health}, Attack power: {mage.attack_power}")
+mage.basic_atk(mm)
+print(f"Hero: {mm.name}, Current health: {mm.health}, Attack power: {mm.attack_power}")
+mm.basic_atk(mage)
+print(f"Hero: {mage.name}, Current health: {mage.health}, Attack power: {mage.attack_power}")
+
+if mm.health > 0:
+    print("\nLesley is a winner!")
+elif mage.health > 0:
+    print("\nLunox is a winner!")
+else:
+    print("\nIt's a draw!")
